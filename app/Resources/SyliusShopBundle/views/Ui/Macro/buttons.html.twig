@@ -1,7 +1,7 @@
 {% macro default(url, message, id, icon, class) %}
-    <a class="ui {% if message is not empty %}labeled {% endif %}{% if icon is not empty %}icon {% endif %}button {% if class is not empty %} {{ class }} {% endif %}" {% if id is not null %} id="{{ id }}"{% endif %} href="{{ url }}">
+    <a class="{% if message is not empty %}labeled {% endif %}{% if icon is not empty %}icon {% endif %}button {% if class is not empty %} {{ class }} {% endif %}" {% if id is not null %} id="{{ id }}"{% endif %} href="{{ url }}">
         {% if icon is not empty %}
-            <i class="icon {{ icon }}"></i>
+            <i class="{{ icon }}"></i>
         {% endif %}
         {% if message is not empty %}
             {{ message|trans }}
