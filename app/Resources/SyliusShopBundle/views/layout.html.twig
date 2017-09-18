@@ -21,11 +21,9 @@
     {{ sonata_block_render_event('sylius.shop.layout.head') }}
 </head>
 
-<body class="pushable">
+<body>
 {{ sonata_block_render_event('sylius.shop.layout.before_body') }}
-<div class="pusher">
     {% block top %}
-        <div id="menu" class="ui large sticky inverted stackable menu">
             {{ sonata_block_render_event('sylius.shop.layout.before_currency_switcher') }}
 
             {{ render(controller('sylius.controller.shop.currency_switch:renderAction')) }}
@@ -36,10 +34,8 @@
             {{ render(controller('sylius.controller.shop.security_widget:renderAction')) }}
 
             {{ sonata_block_render_event('sylius.shop.layout.after_security_widget') }}
-        </div>
     {% endblock %}
 
-    <div class="ui container">
         {% block header %}
             <header>
                 {% include '@SyliusShop/_header.html.twig' %}
@@ -58,12 +54,10 @@
         {% endblock %}
 
         {{ sonata_block_render_event('sylius.shop.layout.after_content') }}
-    </div>
 
     {% block footer %}
         {% include '@SyliusShop/_footer.html.twig' %}
     {% endblock %}
-</div>
 
 {% block javascripts %}
     {% include '@SyliusShop/Ui/_javascripts.html.twig' with {'path': 'assets/shop/js/app.js'} %}
