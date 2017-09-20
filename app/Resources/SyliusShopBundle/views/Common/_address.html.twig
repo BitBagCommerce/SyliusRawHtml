@@ -1,16 +1,14 @@
-<address>
-    {% if address.company is not null %}
-        <strong>{{ address.company }}</strong><br>
-    {% endif %}
-    <strong>{{ address.firstName }} {{ address.lastName }}</strong><br>
+{% if address.company is not null %}
+    {{ address.company }}
+{% endif %}
+    {{ address.firstName }} {{ address.lastName }}
     {% if address.phoneNumber is not null %}
-        {{ address.phoneNumber }}<br/>
+        {{ address.phoneNumber }}
     {% endif %}
-    {{ address.street }}<br/>
-    {{ address.city }}, {{ address.postcode }}<br/>
+    {{ address.street }}
+    {{ address.city }}, {{ address.postcode }}
     {% if address|sylius_province_name is not empty %}
-        {{ address|sylius_province_name }}<br/>
+        {{ address|sylius_province_name }}
     {% endif %}
-    <i class="{{ address.countryCode|lower }}"></i>
-    {{ address.countryCode|sylius_country_name|upper }}
-</address>
+<i class="{{ address.countryCode|lower }}"></i>
+{{ address.countryCode|sylius_country_name|upper }}
