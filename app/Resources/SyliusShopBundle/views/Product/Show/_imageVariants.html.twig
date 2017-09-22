@@ -1,4 +1,3 @@
-<div class="sylius-image-variants">
 {% if product.getVariantSelectionMethod() == 'match' %}
     {% for variant in image.productVariants %}
     <div data-variant-options="{% for option in variant.optionValues %}{{ option.code }} {% endfor %}"></div>
@@ -8,4 +7,3 @@
     <div data-variant-code="{{ variant.code }}"></div>
     {% endfor %}
 {% endif %}
-</div>

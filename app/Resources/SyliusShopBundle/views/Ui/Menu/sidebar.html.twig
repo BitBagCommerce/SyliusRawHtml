@@ -36,10 +36,8 @@
 {%- endif %}
 {% if item.level is same as(1) %}
 <div class="item {% if attributes.class is defined %}{{ attributes.class }}{% endif %}">
-    <div class="header">{{ item.label|trans }}</div>
-    <div class="menu">
+    {{ item.label|trans }}
         {{ block('list') }}
-    </div>
 </div>
 {% else %}
 <a class="item {% if attributes.class is defined %}{{ attributes.class }}{% endif %}" href="{{ item.uri }}">

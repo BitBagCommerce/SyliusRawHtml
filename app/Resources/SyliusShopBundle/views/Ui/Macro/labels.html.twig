@@ -1,5 +1,5 @@
 {% macro default(text) %}
-    <span class="ui label">{{ text|trans }}</span>
+    {{ text|trans }}
 {% endmacro %}
 
 {% macro status(status) %}
@@ -13,17 +13,11 @@
 {% endmacro %}
 
 {% macro enabled() %}
-    <span class="ui teal label">
-        <i class="checkmark icon"></i>
-        {{ 'sylius.ui.enabled'|trans }}
-    </span>
+    {{ 'sylius.ui.enabled'|trans }}
 {% endmacro %}
 
 {% macro disabled() %}
-    <span class="ui red label">
-        <i class="remove icon"></i>
-        {{ 'sylius.ui.disabled'|trans }}
-    </span>
+    {{ 'sylius.ui.disabled'|trans }}
 {% endmacro %}
 
 {% macro yesNo(value) %}
@@ -37,15 +31,9 @@
 {% endmacro %}
 
 {% macro yes() %}
-    <span class="ui basic label">
-        <i class="checkmark icon"></i>
-        {{ 'sylius.ui.yes_label'|trans }}
-    </span>
+    {{ 'sylius.ui.yes_label'|trans }}
 {% endmacro %}
 
 {% macro no() %}
-    <span class="ui basic label">
-        <i class="remove icon"></i>
-        {{ 'sylius.ui.no_label'|trans }}
-    </span>
+    {{ 'sylius.ui.no_label'|trans }}
 {% endmacro %}

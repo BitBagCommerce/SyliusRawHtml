@@ -11,7 +11,7 @@
 
     {{ sonata_block_render_event('sylius.shop.product_review.create.after_product_box', {'product_review': product_review}) }}
     {{ 'sylius.ui.write_your_own_review'|trans }}
-    {{ 'sylius.ui.you_are_reviewing'|trans }} <strong>{{ product.name }}</strong>.
+    {{ 'sylius.ui.you_are_reviewing'|trans }} {{ product.name }}
 
     {{ sonata_block_render_event('sylius.shop.product_review.create.before_form', {'product_review': product_review}) }}
 

@@ -11,11 +11,9 @@
 {% endblock %}
 
 {% block items %}
-    <div class="ui buttons">
-        {% for item in item.children %}
-            {{ block('item') }}
-        {% endfor %}
-    </div>
+    {% for item in item.children %}
+        {{ block('item') }}
+    {% endfor %}
 {% endblock %}
 
 {% block item %}

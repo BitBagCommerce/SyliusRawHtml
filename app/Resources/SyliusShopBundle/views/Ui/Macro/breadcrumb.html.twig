@@ -1,9 +1,9 @@
 {% macro crumble(crumbs = {}, root_path, root_label) %}
     {% for crumb in crumbs %}
         {% if loop.last %}
-            <div class="active">{{ crumb.label }}</div>
+            {{ crumb.label }}
         {% elseif crumb.url is defined %}
-            <a href="{{ crumb.url }}" class="section">{{ crumb.label }}</a>
+            <a href="{{ crumb.url }}">{{ crumb.label }}</a>
         {% else %}
             {{ crumb.label }}
         {% endif %}

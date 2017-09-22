@@ -3,5 +3,5 @@
 {{ 'sylius.ui.show'|trans }} {{ resources.data.maxPerPage }}
 {% for limit in paginationLimits if limit != resources.data.maxPerPage %}
     {% set path = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge(app.request.query.all)|merge({'limit': limit})) %}
-    <a class="item" href="{{ path }}">{{ limit }}</a>
+    <a href="{{ path }}">{{ limit }}</a>
 {% endfor %}
