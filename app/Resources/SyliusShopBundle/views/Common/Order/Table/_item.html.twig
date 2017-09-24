@@ -5,7 +5,7 @@
         {% include '@SyliusShop/Product/_info.html.twig' with {'variant': item.variant} %}
     </td>
     <td>
-        {{ money.format(item.unitPrice, order.currencyCode) }}
+        <span class="sylius-unit-price">{{ money.format(item.unitPrice, order.currencyCode) }}</span>
     </td>
     <td>{{ item.quantity }}</td>
     <td>{{ money.format(item.subtotal, order.currencyCode) }}</td>
