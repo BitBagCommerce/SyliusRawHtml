@@ -1,5 +1,7 @@
-{{ form_widget(form) }}
-<a class="header">{{ form_label(form) }}</a>
-{% if method.description is not null %}
-    {{ method.description }}
-{% endif %}
+<div class="item">
+    {{ form_widget(form) }}
+    <a class="header">{{ form_label(form) }}</a>
+    {% if method.description is not null %}
+        {{ method.description }}
+    {% endif %}
+</div>
