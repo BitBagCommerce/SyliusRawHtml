@@ -10,14 +10,21 @@
                 {% set icon = 'info' %}
             {% endif %}
             <div class="{{ result|default('positive') }} sylius-flash-message">
+                <i class="close icon"></i>
                 <i class="{{ icon|default('checkmark') }} icon"></i>
-                {% set header = 'sylius.ui.'~type %}
-                {{ header|trans }}
-                {% if flash is iterable %}
-                    {{ flash.message|trans(flash.parameters, 'flashes') }}
-                {% else %}
-                    {{ flash|trans({}, 'flashes') }}
-                {% endif %}
+                <div class="content">
+                    <div class="header">
+                        {% set header = 'sylius.ui.'~type %}
+                        {{ header|trans }}
+                    </div>
+                    <p>
+                    {% if flash is iterable %}
+                        {{ flash.message|trans(flash.parameters, 'flashes') }}
+                    {% else %}
+                        {{ flash|trans({}, 'flashes') }}
+                    {% endif %}
+                    </p>
+                </div>
             </div>
         {% endfor %}
     {% endfor %}

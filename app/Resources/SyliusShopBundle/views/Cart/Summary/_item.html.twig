@@ -9,7 +9,7 @@
     </td>
     <td>
         {% if item.unitPrice != item.discountedUnitPrice %}
-            {{ money.convertAndFormat(item.unitPrice) }}
+            <span class="sylius-regular-unit-price">{{ money.convertAndFormat(item.unitPrice) }}</span>
         {% endif %}
         <span class="sylius-unit-price">{{ money.convertAndFormat(item.discountedUnitPrice) }}</span>
     </td>
