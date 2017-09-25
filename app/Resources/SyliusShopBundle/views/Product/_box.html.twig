@@ -2,13 +2,20 @@
 
 {{ sonata_block_render_event('sylius.shop.product.index.before_box', {'product': product}) }}
 
-<a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
-    {{ 'sylius.ui.view_more'|trans }}
-    {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product} %}
-</a>
-<a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">{{ product.name }}</a>
-{% if not product.variants.empty() %}
-    {{ money.calculatePrice(product|sylius_resolve_variant) }}
-{% endif %}
+<div class="card">
+    <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
+        {{ 'sylius.ui.view_more'|trans }}
+        {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product} %}
+    </a>
+    <div class="content">
+        <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}"
+           class="sylius-product-name">{{ product.name }}</a>
+    </div>
+    {% if not product.variants.empty() %}
+        <div class="sylius-product-price">
+            {{ money.calculatePrice(product|sylius_resolve_variant) }}
+        </div>
+    {% endif %}
+</div>
 
 {{ sonata_block_render_event('sylius.shop.product.index.after_box', {'product': product}) }}

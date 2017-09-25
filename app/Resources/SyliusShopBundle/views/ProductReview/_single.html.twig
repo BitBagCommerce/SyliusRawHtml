@@ -1,6 +1,9 @@
-<a>{{ review.author.firstName }}</a>
-{{ review.createdAt|format_date }}
+<div class="comment">
 
-<div class="star rating" data-rating="{{ review.rating }}" data-max-rating="5" style="pointer-events: none;"></div>
+    <a>{{ review.author.firstName }}</a>
+    {{ review.createdAt|format_date }}
 
-{{ review.comment }}
+    <div class="star rating" data-rating="{{ review.rating }}" data-max-rating="5" style="pointer-events: none;"></div>
+
+    {{ review.comment }}
+</div>
