@@ -2,12 +2,12 @@
 
 <div class="address">
     <div>
-        {% include '@SyliusShop/Common/_address.html.twig' with {'address': address} %}
-    </div>
-    <br/>
-    <div>
         {{ buttons.edit(path('sylius_shop_account_address_book_update', {'id': address.id})) }}
         {{ render(path('sylius_shop_account_address_book_set_as_default', {'id': address.id})) }}
         {{ buttons.delete(path('sylius_shop_account_address_book_delete', {'id': address.id}), null, true, address.id) }}
+    </div>
+    <br/>
+    <div>
+        {% include '@SyliusShop/Common/_address.html.twig' with {'address': address} %}
     </div>
 </div>
