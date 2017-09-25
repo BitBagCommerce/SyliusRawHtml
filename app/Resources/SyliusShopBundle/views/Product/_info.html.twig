@@ -3,7 +3,7 @@
 {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product, 'filter': 'sylius_shop_product_tiny_thumbnail'} %}
 <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}"
    class="sylius-product-name">{{ product.name }}</a>
-{{ variant.code }}
+    <span class="sylius-product-variant-code">{{ variant.code }} </span>
 {% if product.hasOptions() %}
     <div class="sylius-product-options">
         {% for optionValue in variant.optionValues %}
