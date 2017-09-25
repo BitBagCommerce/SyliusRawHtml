@@ -17,7 +17,13 @@
         {{ form_widget(form.quantity) }}
     </td>
     <td>
-        <button type="button" data-redirect="{{ path('sylius_shop_cart_summary') }}" data-url="{{ path('sylius_shop_ajax_cart_item_remove', {'id': item.id}) }}" data-csrf-token="{{ csrf_token(item.id) }}"></button>
+        <button type="button"
+                class="sylius-cart-remove-button"
+                data-redirect="{{ path('sylius_shop_cart_summary') }}"
+                data-url="{{ path('sylius_shop_ajax_cart_item_remove', {'id': item.id}) }}"
+                data-csrf-token="{{ csrf_token(item.id) }}">
+            X
+        </button>
     </td>
     <td>
         <span class="sylius-total">{{ money.convertAndFormat(item.subtotal) }}</span>

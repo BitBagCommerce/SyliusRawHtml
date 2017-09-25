@@ -1,6 +1,7 @@
-{% if address.company is not null %}
-    {{ address.company }}
-{% endif %}
+<address>
+    {% if address.company is not null %}
+        {{ address.company }}
+    {% endif %}
     {{ address.firstName }} {{ address.lastName }}
     {% if address.phoneNumber is not null %}
         {{ address.phoneNumber }}
@@ -10,5 +11,6 @@
     {% if address|sylius_province_name is not empty %}
         {{ address|sylius_province_name }}
     {% endif %}
-<i class="{{ address.countryCode|lower }}"></i>
-{{ address.countryCode|sylius_country_name|upper }}
+    <i class="{{ address.countryCode|lower }}"></i>
+    {{ address.countryCode|sylius_country_name|upper }}
+</address>
