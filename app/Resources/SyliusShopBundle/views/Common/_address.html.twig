@@ -2,6 +2,7 @@
     {% if address.company is not null %}
         {{ address.company }}
     {% endif %}
+    <strong>{{ address.firstName }} {{ address.lastName }}</strong>
     {{ address.firstName }} {{ address.lastName }}
     {% if address.phoneNumber is not null %}
         {{ address.phoneNumber }}
