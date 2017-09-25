@@ -1,18 +1,9 @@
-<footer id="footer">
-            {{ sonata_block_render_event('sylius.shop.layout.before_footer') }}
+<footer>
+    {{ sonata_block_render_event('sylius.shop.layout.before_footer') }}
 
-                {{ 'sylius.ui.your_store'|trans }}
-                    <a href="#" class="item">{{ 'sylius.ui.about'|trans }}</a>
-                    <a href="#" class="item">{{ 'sylius.ui.terms_and_conditions'|trans }}</a>
-                    <a href="#" class="item">{{ 'sylius.ui.privacy_policy'|trans }}</a>
-                    <a href="{{ path('sylius_shop_contact_request') }}" class="item">{{ 'sylius.ui.contact_us'|trans }}</a>
-                {{ 'sylius.ui.customer_care'|trans  }}
-                    <a href="{{ path('sylius_shop_contact_request') }}" class="item">{{ 'sylius.ui.contact_us'|trans  }}</a>
-                    <a href="#" class="item">{{ 'sylius.ui.faqs'|trans  }}</a>
-                    <a href="#" class="item">{{ 'sylius.ui.delivery_and_shipping'|trans  }}</a>
-                    <a href="#" class="item">{{ 'sylius.ui.returns_policy'|trans  }}</a>
-                &copy; {{ 'sylius.ui.your_store'|trans }}
-                {{ 'sylius.ui.powered_by'|trans }} <a href="http://sylius.org" target="_blank">Sylius</a>
+    {{ 'sylius.ui.your_store'|trans }}
+    {{ 'sylius.ui.customer_care'|trans }}
+    <a href="{{ path('sylius_shop_contact_request') }}">{{ 'sylius.ui.contact_us'|trans }}</a>
 
-            {{ sonata_block_render_event('sylius.shop.layout.after_footer') }}
+    {{ sonata_block_render_event('sylius.shop.layout.after_footer') }}
 </footer>

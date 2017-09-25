@@ -1,6 +1,6 @@
 {% macro default(header, icon, subheader) %}
     {% if icon is not empty %}
-        <i class="circular {{ icon }} icon"></i>
+        <i class="{{ icon }}"></i>
     {% endif %}
     {{ header }}
     {% if subheader is not empty %}
