@@ -7,7 +7,9 @@
     <td colspan="2" id="promotion-shipping-discounts">
         {% for label, amount in orderShippingPromotions %}
             {{ label }}
-            {{ money.convertAndFormat(amount) }}
+            <div class="description">
+                {{ money.convertAndFormat(amount) }}
+            </div>
         {% endfor %}
     </td>
 {% endif %}

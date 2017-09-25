@@ -19,7 +19,7 @@
                         {% endfor %}
                 {% endif %}
             </td>
-            <td>{{ money.calculatePrice(variant) }}</td>
+            <td class="sylius-product-variant-price">{{ money.calculatePrice(variant) }}</td>
             <td>
                 {{ form_widget(form.cartItem.variant[loop.index0], {'label': false}) }}
             </td>
