@@ -1,9 +1,10 @@
 {% if locales|length > 1 %}
     <div id="sylius-locale-selector">
+        <span class="text sylius-active-locale">{{ active|sylius_locale_name }}</span>
         {{ active|sylius_locale_name }}
         {% for code in locales %}
             {% if code is not same as(active) %}
-                <a href="{{ path('sylius_shop_switch_locale', {'code': code}) }}">
+                <a href="{{ path('sylius_shop_switch_locale', {'code': code}) }}" class="sylius-available-locale">
                     {{ code|sylius_locale_name }}
                 </a>
             {% endif %}
