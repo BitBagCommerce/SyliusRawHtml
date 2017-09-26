@@ -63,12 +63,10 @@ script:
     - bin/phpspec run --no-interaction -f dot
 
     - echo "Testing (Behat - brand new, regular scenarios; ~@javascript && ~@todo && ~@cli)" "Sylius"
-#    - bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="~@javascript && ~@todo && ~@cli"
+    - bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="~@javascript && ~@todo && ~@cli"
 
     - echo "Testing (Behat - brand new, javascript scenarios; @javascript && ~@todo && ~@cli)" "Sylius"
-#    - bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="@javascript && ~@todo && ~@cli" || bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="@javascript && ~@todo && ~@cli" --rerun
-
-    - bin/behat vendor/sylius/sylius/features/account/customer_account/address_book/editing_address.feature:56
+    - bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="@javascript && ~@todo && ~@cli" || bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="@javascript && ~@todo && ~@cli" --rerun
 
 after_failure:
     - vendor/lakion/mink-debug-extension/travis/tools/upload-textfiles "${SYLIUS_BUILD_DIR}/*.log"
