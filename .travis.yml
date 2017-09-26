@@ -66,7 +66,7 @@ script:
     - bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="~@javascript && ~@todo && ~@cli"
 
     - echo "Testing (Behat - brand new, javascript scenarios; @javascript && ~@todo && ~@cli)" "Sylius"
-    - bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="@javascript && ~@todo && ~@cli" || bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="@javascript && ~@todo && ~@cli" --rerun
+    - bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="@javascript && ~@address_book && ~@todo && ~@cli" || bin/behat --strict --no-interaction -vvv -f progress -p cached --tags="@javascript && ~@todo && ~@cli" --rerun
 
 after_failure:
     - vendor/lakion/mink-debug-extension/travis/tools/upload-textfiles "${SYLIUS_BUILD_DIR}/*.log"

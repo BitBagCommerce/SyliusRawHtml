@@ -5,21 +5,15 @@
 
 {% if not orderShippingPromotions is empty %}
     <td colspan="2" id="promotion-shipping-discounts">
-        <div class="ui relaxed divided list">
-            {% for label, amount in orderShippingPromotions %}
-                <div class="item">
-                    <div class="content">
-                        <div class="header">{{ label }}</div>
-                        <div class="description">
-                            {{ money.convertAndFormat(amount) }}
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+        {% for label, amount in orderShippingPromotions %}
+            {{ label }}
+            <div class="description">
+                {{ money.convertAndFormat(amount) }}
+            </div>
+        {% endfor %}
     </td>
 {% endif %}
-<td colspan="{% if not orderShippingPromotions is empty %}2{% else %}4{% endif %}" class="right aligned" id="shipping-total">
+<td colspan="{% if not orderShippingPromotions is empty %}2{% else %}4{% endif %}" id="shipping-total">
     {{ 'sylius.ui.shipping_total'|trans }}:
     {{ money.format(order.shippingTotal, order.currencyCode) }}
 </td>

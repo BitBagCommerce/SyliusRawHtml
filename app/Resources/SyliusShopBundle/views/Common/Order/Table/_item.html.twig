@@ -7,6 +7,6 @@
     <td>
         <span class="sylius-unit-price">{{ money.format(item.unitPrice, order.currencyCode) }}</span>
     </td>
-    <td class="center aligned">{{ item.quantity }}</td>
-    <td class="right aligned">{{ money.format(item.subtotal, order.currencyCode) }}</td>
+    <td>{{ item.quantity }}</td>
+    <td>{{ money.format(item.subtotal, order.currencyCode) }}</td>
 </tr>

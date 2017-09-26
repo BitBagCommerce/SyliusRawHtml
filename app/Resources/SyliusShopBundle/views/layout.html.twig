@@ -21,49 +21,43 @@
     {{ sonata_block_render_event('sylius.shop.layout.head') }}
 </head>
 
-<body class="pushable">
+<body>
 {{ sonata_block_render_event('sylius.shop.layout.before_body') }}
-<div class="pusher">
-    {% block top %}
-        <div id="menu" class="ui large sticky inverted stackable menu">
-            {{ sonata_block_render_event('sylius.shop.layout.before_currency_switcher') }}
+{% block top %}
+    {{ sonata_block_render_event('sylius.shop.layout.before_currency_switcher') }}
 
-            {{ render(controller('sylius.controller.shop.currency_switch:renderAction')) }}
-            {{ render(controller('sylius.controller.shop.locale_switch:renderAction')) }}
+    {{ render(controller('sylius.controller.shop.currency_switch:renderAction')) }}
+    {{ render(controller('sylius.controller.shop.locale_switch:renderAction')) }}
 
-            {{ sonata_block_render_event('sylius.shop.layout.before_security_widget') }}
+    {{ sonata_block_render_event('sylius.shop.layout.before_security_widget') }}
 
-            {{ render(controller('sylius.controller.shop.security_widget:renderAction')) }}
+    {{ render(controller('sylius.controller.shop.security_widget:renderAction')) }}
 
-            {{ sonata_block_render_event('sylius.shop.layout.after_security_widget') }}
-        </div>
-    {% endblock %}
+    {{ sonata_block_render_event('sylius.shop.layout.after_security_widget') }}
+{% endblock %}
 
-    <div class="ui container">
-        {% block header %}
-            <header>
-                {% include '@SyliusShop/_header.html.twig' %}
+{% block header %}
+    <header>
+        {% include '@SyliusShop/_header.html.twig' %}
 
-                {{ sonata_block_render_event('sylius.shop.layout.after_header') }}
+        {{ sonata_block_render_event('sylius.shop.layout.after_header') }}
 
-                {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
-            </header>
-        {% endblock %}
+        {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
+    </header>
+{% endblock %}
 
-        {% include '@SyliusShop/Ui/_flashes.html.twig' %}
+{% include '@SyliusShop/Ui/_flashes.html.twig' %}
 
-        {{ sonata_block_render_event('sylius.shop.layout.before_content') }}
+{{ sonata_block_render_event('sylius.shop.layout.before_content') }}
 
-        {% block content %}
-        {% endblock %}
+{% block content %}
+{% endblock %}
 
-        {{ sonata_block_render_event('sylius.shop.layout.after_content') }}
-    </div>
+{{ sonata_block_render_event('sylius.shop.layout.after_content') }}
 
-    {% block footer %}
-        {% include '@SyliusShop/_footer.html.twig' %}
-    {% endblock %}
-</div>
+{% block footer %}
+    {% include '@SyliusShop/_footer.html.twig' %}
+{% endblock %}
 
 {% block javascripts %}
     {% include '@SyliusShop/Ui/_javascripts.html.twig' with {'path': 'assets/shop/js/app.js'} %}

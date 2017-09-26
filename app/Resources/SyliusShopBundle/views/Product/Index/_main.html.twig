@@ -10,19 +10,16 @@
 {% include '@SyliusShop/Product/Index/_pagination.html.twig' %}
 {% include '@SyliusShop/Product/Index/_sorting.html.twig' %}
 
-<div class="ui clearing hidden divider"></div>
-
 {{ sonata_block_render_event('sylius.shop.product.index.before_list', {'products': resources.data}) }}
 
 {% if resources.data|length > 0 %}
-    <div class="ui three column stackable grid" id="products">
+    <div id="products">
         {% for product in resources.data %}
             <div class="column">
                 {% include '@SyliusShop/Product/_box.html.twig' %}
             </div>
         {% endfor %}
     </div>
-    <div class="ui hidden divider"></div>
 
     {{ sonata_block_render_event('sylius.shop.product.index.before_pagination', {'products': resources.data}) }}
 

@@ -4,21 +4,15 @@
     {% block breadcrumb %}
     {% endblock %}
 
-    <div class="ui stackable grid">
-        <div class="four wide column">
-            {{ sonata_block_render_event('sylius.shop.account.layout.before_menu') }}
+    {{ sonata_block_render_event('sylius.shop.account.layout.before_menu') }}
 
-            {{ knp_menu_render('sylius.shop.account', {'template': '@SyliusShop/Ui/Menu/simple.html.twig'}) }}
+    {{ knp_menu_render('sylius.shop.account', {'template': '@SyliusShop/Ui/Menu/simple.html.twig'}) }}
 
-            {{ sonata_block_render_event('sylius.shop.account.layout.after_menu') }}
-        </div>
-        <div class="twelve wide column">
-            {{ sonata_block_render_event('sylius.shop.account.layout.before_subcontent') }}
+    {{ sonata_block_render_event('sylius.shop.account.layout.after_menu') }}
+    {{ sonata_block_render_event('sylius.shop.account.layout.before_subcontent') }}
 
-            {% block subcontent %}
-            {% endblock %}
+    {% block subcontent %}
+    {% endblock %}
 
-            {{ sonata_block_render_event('sylius.shop.account.layout.after_subcontent') }}
-        </div>
-    </div>
+    {{ sonata_block_render_event('sylius.shop.account.layout.after_subcontent') }}
 {% endblock %}

@@ -8,7 +8,7 @@
         </th>
     {% else %}
         <th class="sortable sylius-table-column-{{ field.name }}">
-            <a href="{{ link(field.name, attributes, order, grid.parameters.all) }}">{{ field.label|trans }}<i class="sort icon"></i></a>
+            <a href="{{ link(field.name, attributes, order, grid.parameters.all) }}">{{ field.label|trans }}</a>
         </th>
     {% endif %}
 {% endmacro %}
